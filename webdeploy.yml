@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+   name: webdeploy
+   labels:
+     app: webdeploy
+spec:
+   selector:
+     matchlabels:
+         app: webdeploy
+   replicas: 1
+   template:
+     metadata:
+         labels:
+            app: webdeploy
+     spec:
+         containers:
+         -  image: saranya2405/webimage
+            name: webdeploy
+            ports:
+            -  containerPort: 80
+               name: webdeploy 
